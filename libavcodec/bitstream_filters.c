@@ -28,6 +28,7 @@ extern const AVBitStreamFilter ff_aac_adtstoasc_bsf;
 extern const AVBitStreamFilter ff_chomp_bsf;
 extern const AVBitStreamFilter ff_dump_extradata_bsf;
 extern const AVBitStreamFilter ff_dca_core_bsf;
+extern const AVBitStreamFilter ff_eac3_core_bsf;
 extern const AVBitStreamFilter ff_extract_extradata_bsf;
 extern const AVBitStreamFilter ff_filter_units_bsf;
 extern const AVBitStreamFilter ff_h264_metadata_bsf;
@@ -48,6 +49,7 @@ extern const AVBitStreamFilter ff_null_bsf;
 extern const AVBitStreamFilter ff_remove_extradata_bsf;
 extern const AVBitStreamFilter ff_text2movsub_bsf;
 extern const AVBitStreamFilter ff_trace_headers_bsf;
+extern const AVBitStreamFilter ff_vp9_metadata_bsf;
 extern const AVBitStreamFilter ff_vp9_raw_reorder_bsf;
 extern const AVBitStreamFilter ff_vp9_superframe_bsf;
 extern const AVBitStreamFilter ff_vp9_superframe_split_bsf;
@@ -75,6 +77,9 @@ const AVBitStreamFilter *av_bsf_get_by_name(const char *name)
 {
     const AVBitStreamFilter *f = NULL;
     void *i = 0;
+
+    if (!name)
+        return NULL;
 
     while ((f = av_bsf_iterate(&i))) {
         if (!strcmp(f->name, name))

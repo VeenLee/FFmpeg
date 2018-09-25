@@ -82,6 +82,7 @@
     <NASM Include="..\libavfilter\x86\vf_interlace.asm" />
     <NASM Include="..\libavfilter\x86\vf_limiter.asm" />
     <NASM Include="..\libavfilter\x86\vf_maskedmerge.asm" />
+    <NASM Include="..\libavfilter\x86\vf_overlay.asm" />
     <NASM Include="..\libavfilter\x86\vf_pp7.asm" />
     <NASM Include="..\libavfilter\x86\vf_psnr.asm" />
     <NASM Include="..\libavfilter\x86\vf_pullup.asm" />
@@ -114,13 +115,18 @@
     <ClCompile Include="..\libavfilter\video.c" />
     <ClCompile Include="..\libavfilter\pthread.c" />
     <ClCompile Include="..\libavfilter\qsvvpp.c" />
+    <ClCompile Include="..\libavfilter\dnn_interface.c" />
+    <ClCompile Include="..\libavfilter\dnn_backend_native.c" />
     <ClCompile Include="..\libavfilter\f_bench.c" />
     <ClCompile Include="..\libavfilter\af_sidechaincompress.c" />
     <ClCompile Include="..\libavfilter\af_acontrast.c" />
     <ClCompile Include="..\libavfilter\af_acopy.c" />
     <ClCompile Include="..\libavfilter\af_afade.c" />
     <ClCompile Include="..\libavfilter\af_acrusher.c" />
+    <ClCompile Include="..\libavfilter\f_cue.c" />
+    <ClCompile Include="..\libavfilter\af_adeclick.c" />
     <ClCompile Include="..\libavfilter\af_adelay.c" />
+    <ClCompile Include="..\libavfilter\af_aderivative.c" />
     <ClCompile Include="..\libavfilter\af_aecho.c" />
     <ClCompile Include="..\libavfilter\af_aemphasis.c" />
     <ClCompile Include="..\libavfilter\aeval.c" />
@@ -199,6 +205,7 @@
     <ClCompile Include="..\libavfilter\asink_anullsink.c" />
     <ClCompile Include="..\libavfilter\vf_extractplanes.c" />
     <ClCompile Include="..\libavfilter\vf_alphamerge.c" />
+    <ClCompile Include="..\libavfilter\vf_amplify.c" />
     <ClCompile Include="..\libavfilter\vf_subtitles.c" />
     <ClCompile Include="..\libavfilter\vf_atadenoise.c" />
     <ClCompile Include="..\libavfilter\vf_avgblur.c" />
@@ -208,6 +215,7 @@
     <ClCompile Include="..\libavfilter\vf_blackdetect.c" />
     <ClCompile Include="..\libavfilter\vf_blackframe.c" />
     <ClCompile Include="..\libavfilter\vf_boxblur.c" />
+    <ClCompile Include="..\libavfilter\boxblur.c" />
     <ClCompile Include="..\libavfilter\vf_chromakey.c" />
     <ClCompile Include="..\libavfilter\vf_ciescope.c" />
     <ClCompile Include="..\libavfilter\vf_codecview.c" />
@@ -217,6 +225,7 @@
     <ClCompile Include="..\libavfilter\vf_colorlevels.c" />
     <ClCompile Include="..\libavfilter\vf_colormatrix.c" />
     <ClCompile Include="..\libavfilter\vf_colorspace.c" />
+    <ClCompile Include="..\libavfilter\colorspace.c" />
     <ClCompile Include="..\libavfilter\vf_convolution.c" />
     <ClCompile Include="..\libavfilter\vf_convolve.c" />
     <ClCompile Include="..\libavfilter\vf_copy.c" />
@@ -228,6 +237,7 @@
     <ClCompile Include="..\libavfilter\vf_datascope.c" />
     <ClCompile Include="..\libavfilter\vf_dctdnoiz.c" />
     <ClCompile Include="..\libavfilter\vf_deband.c" />
+    <ClCompile Include="..\libavfilter\vf_deblock.c" />
     <ClCompile Include="..\libavfilter\vf_decimate.c" />
     <ClCompile Include="..\libavfilter\vf_neighbor.c" />
     <ClCompile Include="..\libavfilter\vf_deflicker.c" />
@@ -247,6 +257,7 @@
     <ClCompile Include="..\libavfilter\vf_entropy.c" />
     <ClCompile Include="..\libavfilter\vf_eq.c" />
     <ClCompile Include="..\libavfilter\vf_fade.c" />
+    <ClCompile Include="..\libavfilter\vf_fftdnoiz.c" />
     <ClCompile Include="..\libavfilter\vf_fftfilt.c" />
     <ClCompile Include="..\libavfilter\vf_field.c" />
     <ClCompile Include="..\libavfilter\vf_fieldhint.c" />
@@ -261,6 +272,7 @@
     <ClCompile Include="..\libavfilter\vf_framestep.c" />
     <ClCompile Include="..\libavfilter\vf_gblur.c" />
     <ClCompile Include="..\libavfilter\vf_geq.c" />
+    <ClCompile Include="..\libavfilter\vf_colorconstancy.c" />
     <ClCompile Include="..\libavfilter\vf_lut3d.c" />
     <ClCompile Include="..\libavfilter\vf_histeq.c" />
     <ClCompile Include="..\libavfilter\vf_histogram.c" />
@@ -273,6 +285,7 @@
     <ClCompile Include="..\libavfilter\vf_hwupload.c" />
     <ClCompile Include="..\libavfilter\vf_hysteresis.c" />
     <ClCompile Include="..\libavfilter\vf_il.c" />
+    <ClCompile Include="..\libavfilter\vf_tinterlace.c" />
     <ClCompile Include="..\libavfilter\vf_kerndeint.c" />
     <ClCompile Include="..\libavfilter\vf_lenscorrection.c" />
     <ClCompile Include="..\libavfilter\vf_lumakey.c" />
@@ -292,7 +305,6 @@
     <ClCompile Include="..\libavfilter\vf_noise.c" />
     <ClCompile Include="..\libavfilter\vf_normalize.c" />
     <ClCompile Include="..\libavfilter\vf_null.c" />
-    <ClCompile Include="..\libavfilter\vf_overlay.c" />
     <ClCompile Include="..\libavfilter\vf_overlay_qsv.c" />
     <ClCompile Include="..\libavfilter\vf_owdenoise.c" />
     <ClCompile Include="..\libavfilter\vf_pad.c" />
@@ -330,13 +342,13 @@
     <ClCompile Include="..\libavfilter\vf_signature.c" />
     <ClCompile Include="..\libavfilter\vf_smartblur.c" />
     <ClCompile Include="..\libavfilter\vf_spp.c" />
+    <ClCompile Include="..\libavfilter\vf_sr.c" />
     <ClCompile Include="..\libavfilter\vf_super2xsai.c" />
     <ClCompile Include="..\libavfilter\vf_swaprect.c" />
     <ClCompile Include="..\libavfilter\vf_swapuv.c" />
     <ClCompile Include="..\libavfilter\vf_telecine.c" />
     <ClCompile Include="..\libavfilter\vf_thumbnail.c" />
     <ClCompile Include="..\libavfilter\vf_tile.c" />
-    <ClCompile Include="..\libavfilter\vf_tinterlace.c" />
     <ClCompile Include="..\libavfilter\vf_tonemap.c" />
     <ClCompile Include="..\libavfilter\vf_transpose.c" />
     <ClCompile Include="..\libavfilter\vf_unsharp.c" />
@@ -344,6 +356,7 @@
     <ClCompile Include="..\libavfilter\vf_vaguedenoiser.c" />
     <ClCompile Include="..\libavfilter\vf_vectorscope.c" />
     <ClCompile Include="..\libavfilter\vf_vflip.c" />
+    <ClCompile Include="..\libavfilter\vf_vfrdet.c" />
     <ClCompile Include="..\libavfilter\vf_vignette.c" />
     <ClCompile Include="..\libavfilter\vf_vmafmotion.c" />
     <ClCompile Include="..\libavfilter\vf_vpp_qsv.c" />
@@ -377,9 +390,10 @@
     <ClCompile Include="..\libavfilter\x86\vf_hflip_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_hqdn3d_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_idet_init.c" />
-    <ClCompile Include="..\libavfilter\x86\vf_interlace_init.c" />
+    <ClCompile Include="..\libavfilter\x86\vf_tinterlace_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_limiter_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_maskedmerge_init.c" />
+    <ClCompile Include="..\libavfilter\x86\vf_overlay_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_pp7_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_psnr_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_pullup_init.c" />
@@ -388,7 +402,6 @@
     <ClCompile Include="..\libavfilter\x86\vf_ssim_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_stereo3d_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_threshold_init.c" />
-    <ClCompile Include="..\libavfilter\x86\vf_tinterlace_init.c" />
     <ClCompile Include="..\libavfilter\x86\af_volume_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_w3fdif_init.c" />
     <ClCompile Include="..\libavfilter\x86\vf_yadif_init.c" />
@@ -427,14 +440,14 @@
     <ClCompile Include="..\libavfilter\vf_idet.c">
       <ObjectFileName>$(IntDir)\libavfilter_vf_idet.obj</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\libavfilter\vf_interlace.c">
-      <ObjectFileName>$(IntDir)\libavfilter_vf_interlace.obj</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="..\libavfilter\vf_limiter.c">
       <ObjectFileName>$(IntDir)\libavfilter_vf_limiter.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\libavfilter\vf_maskedmerge.c">
       <ObjectFileName>$(IntDir)\libavfilter_vf_maskedmerge.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\libavfilter\vf_overlay.c">
+      <ObjectFileName>$(IntDir)\libavfilter_vf_overlay.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\libavfilter\vf_pp7.c">
       <ObjectFileName>$(IntDir)\libavfilter_vf_pp7.obj</ObjectFileName>
@@ -721,7 +734,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0502;_LIB;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0600;_LIB;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(OutDir)\include\freetype2;$(ProjectDir)\..\..\prebuilt\include\freetype2;$(OutDir)\include\fribidi;$(ProjectDir)\..\..\prebuilt\include\fribidi;.\;..\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <C99Support>true</C99Support>
@@ -858,7 +871,7 @@ cd $(ProjectDir)
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0502;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0600;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(OutDir)\include\freetype2;$(ProjectDir)\..\..\prebuilt\include\freetype2;$(OutDir)\include\fribidi;$(ProjectDir)\..\..\prebuilt\include\fribidi;.\;..\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <C99Support>true</C99Support>
@@ -886,7 +899,7 @@ cd $(ProjectDir)
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
-      <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+      <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
@@ -1006,7 +1019,7 @@ cd $(ProjectDir)
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLStaticDeps|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0502;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0600;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>$(OutDir)\include\freetype2;$(ProjectDir)\..\..\prebuilt\include\freetype2;$(OutDir)\include\fribidi;$(ProjectDir)\..\..\prebuilt\include\fribidi;.\;..\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <C99Support>true</C99Support>
@@ -1034,7 +1047,7 @@ cd $(ProjectDir)
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
-      <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+      <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
@@ -1156,7 +1169,7 @@ cd $(ProjectDir)
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0502;_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0600;_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointExceptions>false</FloatingPointExceptions>
@@ -1302,7 +1315,7 @@ cd $(ProjectDir)
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0502;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0600;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1318,7 +1331,7 @@ cd $(ProjectDir)
       <AdditionalOptions Condition="'$(AdditionalOptions)' == '' and '$(VisualStudioVersion)' != '12.0'">/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <DisableSpecificWarnings>4244;4267;4018;4146;4028;4996;4090;4114;4308;4305;4005;4101;4554;4307;4273;4133;4544;4334;4293;4047;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+      <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -1461,7 +1474,7 @@ cd $(ProjectDir)
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0502;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0600;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1477,7 +1490,7 @@ cd $(ProjectDir)
       <AdditionalOptions Condition="'$(AdditionalOptions)' == '' and '$(VisualStudioVersion)' != '12.0'">/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <DisableSpecificWarnings>4244;4267;4018;4146;4028;4996;4090;4114;4308;4305;4005;4101;4554;4307;4273;4133;4544;4334;4293;4047;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+      <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -1620,7 +1633,7 @@ cd $(ProjectDir)
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0502;_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_AV_CONFIG_H;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0600;_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
